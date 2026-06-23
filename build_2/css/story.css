@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+    font-family: 'Arial', Arial, sans-serif;
+    margin: 0;
+    background-color: #262a33;
+    color: white;
+}
+
+.hover-animate {
+    cursor: pointer;
+}
+

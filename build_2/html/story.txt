@@ -1,0 +1,170 @@
+// Intro
+
+// STEP 1
+On 28th February 6:15 AM UTC, American and Israeli forces launched the first strikes of Operation EPIC FURY and Operation Roaring Lion.
+
+//STEP 2
+Hundreds were killed on the first day as munitions rained down on Iran. Among the dead, Supreme Leader Ayatollah Ali Khamenei, who had ruled the Islamic republic without reprieve since 1989.
+
+//STEP 3
+In the days that followed, defence officials spoke of hacked traffic cameras and compromised cell towers in Tehran. The strike which killed Khamenei was an intelligence coup which had taken years of top-secret planning.
+
+//STEP 4
+However, it did not come as a surprise for everyone. 8,000 miles away near London, a different type of killing had taken place. One hour before the strike, on Amazon's EU-West-2 servers, trading on Polymarket's CLOB servers spiked abruptly.
+
+//STEP 5
+A small group of wallets, many of them with no trading history, had placed well-timed bets on an Iran war starting on the 28th, just hours before the first missiles were launched.
+
+//STEP 6
+One of the biggest winners was Vivaldi007, a 'fresh wallet' created just 20 days ago. The account made US$700,000 by correctly predicting the day of the strike, the successful assasination of Khamenei and Israel's close participation.
+
+//STEP 7
+Despite its expcetional foresight, Vivaldi007 had no interest in making a second set of wagers. A total of $400,000 was transferred out on the same day, while the remainng would be transferred out on the 3rd March. 
+
+//STEP 8 
+The wallet has been silent since.
+
+// The Truth Machine
+
+// PARA 1
+Vivaldi007 was just one of the many users on Polymarket, a prediction market where users can place bets on the likelihood of future events. 
+
+The operations are disarmingly simple. Every market poses a binary question that can be answered YES / NO. Every share of YES/NO is priced according to the probability of the event: $0 for 0% and $1 for 100%. 
+
+[Will President Donald Trump praise 'Polymarket' at his next press conference?]
+
+If you own 100,000 shares of an improbable event bought at $0.10 each, you could make $90,000 when the event came true. If you own 100,000 shares of a highly-probable event bought at $0.98 each, your profits would be considerably lower at $2000. Profits are commensurate with the risks involved.
+
+Despite its relative simplicity, prediction markets have a long and illustrious track record. They've been successful in forecasting everything from Federal reserve rates to election results. The non-profit Iowa Electronic markets--in operation since the 1980s--has beaten political polls 74% of the time.
+
+However, the surging popularity of profit-driven platforms like Polymarket and Kalshi has attracted a storm of controversy. Many critics call them a front for unregulated online gambling. Media outlets from the WSJ to More Perfect Union have investigated the companies for preying on the user's financial vulnerability.
+
+Most finance professionals are more circumspect. Simon, a pro forecaster with the RAND corporation, argues they could provide 'a lot of value' in areas with poor information and high uncertainty.
+
+"If we were flying through Dubai, and the conflict kicks off again. There's at least some value in knowing there's a 20% chance flights will be cancelled, and that's important for a multi milllion dollar industry."
+
+Jon Reiter, Chief Data Scientist of blockchain analytics firm ChainArgos, also believes in their utility to the markets. "Businesses need to be aware of upcoming business events like tax rates, and elections affect tax rates and tax rates affeect what country you build your factory in," he said "it's kind of a simple example but it's real."
+
+"I mean, more information about the world is an unmitigated social good"
+
+The only catch is when such information is illegal or classified. In such cases, prediction betting is likely to have a corrosive effect on public institutions and trust, said Jon. The volumes on Polymarket might be smaller than stocks or commodities, but they have a outsized impact on public perception.
+
+"$10,000 made by a cabinet minister betting on military deployments has much more of a negative effect than $10,000 overcharged on the highway construction contracts, for example," he said.
+
+Unfortunately, the DeFi structure of Polymarket--anonymous to a fault--makes it difficult to distinguish corruption from prediction. Since the start of 2026, four men have been arrested for trading on confidential information on Polymarket. They include a US special forces operator who traded on Maduro's capture, a Google engineer who traded on the top search terms and two IDF officers who traded on military strikes in the Middle East.
+
+Polymarket see the arrests as a affirmation of 'market integrity', but the numbers tell a different story. According to on-chain data examined by BLOCKHEAD Research, large flows of anomlaous activity around Iran.
+
+// On-chain forensics
+// Step 1
+One of the most liquid markets related to Iran was [ConditionID] - Will the US Strike Iran on 28th February. It attracted {134091243} transactions, from {u9o24} wallets, with a total volume of {$1392131890}
+
+// Step 2
+Long bets, defined as wagers of more than $2,500 and under the median price of ${X}, were placed by just 255 wallets. 63 of them had no prior trading history before the war.
+
+// Step 3
+During the last 12 hours before the strike, they made a total of $1.7 million---approximately a third of all profits made during the time period.
+
+// Step 4
+For some, the timing seemed is either suspect or extremely lucky. 0x283492, an account with no prior history of trading, took a long position less than 2 hours before the strikes began.
+
+// Step 5
+By 9AM, its $18700 investment would be worth $98700, a 500% return capital. All of the money would be cashed out between 6-7pm on the same day. 
+
+// Step 6
+Another account flagged for suspicious acitivity is Dicedicedice. Between 1-2 AM on the morning of the 28th February, the account bought 149,995 YES Shares at $0.20 per share.
+
+// Step 7 
+Just like 0x20349, the wallet would reap a windfall. It made $119,963 dollars and cashed out at 16:17 on the same day.
+
+// Step 8 
+On-chain data from Polygonscan and Polywatcher reveals just how new it was. Dicedicedice was created just one day before the strike on 27th February. It was funded at 2 minutes past midnight on the 28th February, just 5 minutes before it made its massive bet on the Iran war.
+
+// Step 9
+Several of the accounts on Polymarket are also closely coordinated and connected. 
+
+// Step 10
+@aaamsaasa and @semiconductorIT made bets within 20 minutes of each other at 5:08AM and 5:27AM respectively. After winning $30,157.58 and $29,410.12 respectively, the would also withdraw their money at the same time.
+
+// Step 11
+At 16:15pm and 16:20pm, the cashed out all of their winnings to the same Solana wallet: 4dlzqynk9szjf6pcav73828tzhgjaf9kwgpkvuzv4fwy. Both have been inactive since March.
+
+The anonymity of onchain transactions make it difficult to ascertain a true insider, but the pattern of suspicious behaviour is equally difficult to dismiss. 64 of the 79 wallets highlighted by BLOCKHEAD Research were less than 2 months old. 71 of them have been completely inactive since their wins on the 28th of February.
+
+At least 6 of the Polymarket acccounts have been deleted at the time of writing. Their display names are listed as 'anon'--the default assigned to deleted wallets.
+
+Jon, who specialises in blockchain investigations, notes other suspicious patterns in how the accounts were funded. Three of the wallets (0x45647817f1e2f706748da27ed717ecae9b674a11, 0x2584d195f40920dceee0236700d90c58a885b0c9, 0x45647817f1e2f706748da27ed717ecae9b674a11) are using the same 'somewhat obscure' bridge to fund their Polymarket accounts.
+
+"This does not mean they are the same person. It doesn't even prove they are all related. but Polymarket is a casino. think of this as catching 3 "unrelated" card cheats at your casino and they all have receipts for the same motorway rest stop 500km away in their pockets. it is suspicious," he explained.
+
+There are also unsual patterns in the volume and timing of many Iran markets. BLOCKHEAD Research analysed the market's liquidity in the six hours before strikes began. In three separate markets, trading had spiked sharply between 5-6AM, a full hour before the first strikes began. 
+
+The spike was highly directional. Most of the traffic came from transactions buying YES shares for 'Will the US Strike Iran by 28th February?" "Will the US Strike Iran by 31 March?" and "Will the US next strike Iran on February 28, 2026 (ET)?". 
+
+For 'Will the US Strike Iran by 28th February. There were five times as many YES shares bought between 5-6 AM than in the previous hour. The sudden surge in demand drove the price upwards from $0.15 per share to $0.25 per share by 6AM.
+
+Accounting for the mystery of the 5AM surge is difficult. Mantic AI, a leading AI forecasting lab based in Oxfordshire, failed to pick up on the pre-strike signals which informed Polymarket traders. According to its Iran report, the first indications of conflict came from market signals at 6:17AM---2 minutes after the strikes had began. 
+
+There was also no indication from Telegram, X or Discord. Chatter about the war had died down on the morning of the 28th. []
+
+Hannah Su, a freelance shipping analyst based in Harvard, has tracked the AIS transponder data from the US Aircraft Carriers involved in the war. She says there is little open source information to indicate that a strike would be imminent. Neither the USS Abraham Lincoln nor the USS Gerald Ford had turned on its AIS transponder on the 28th--their last known locations were reportedly in the Straits of Malacca and the Meditarranean sea off Morocco.
+
+Hannah [Quote]
+
+// THE WILD HUNT
+
+During the company's infancy, Polymarket CEO Shayne Coplan had celebrated the presence of insiders. In a CBS interview from 2024, Coplan claimed that insiders would 'bring a lot of benefits to the market."
+
+Kalshi's CEO made the same point, arguing for the relevance of 'nonmaterial nonpublic information'.
+
+In recent months, however, the companies have changed their tune. The intense media scrutiny on prediction markets seemed to have spurred a policy reversal on the use of confidential information. In April, Polymarket has hired Chainanalysis--a leading blockchain analytics firm--to monitor its trading activities and to refine its 'detection methods.' It has also tapped Palantir and TWG AI to build what it calls a next generation 'Sports Integrity Platform'.
+
+It remains to be seen if such regulation will be successful. Simon is optimisitc because he believes that prediction markets have a commercial incentive to keep themselves corruption-free. He argues that it's not in Kalshi or Polymarket's self-interest to run 'weird scam markets where the outcome is known'
+
+The recent arrest of a Google Engineer for insider trading is a prime example. He said: "If I'm Google and I say to all employees let's go out there and use the company's information to bet... it would destroy any market in the long-term."
+
+"Who's gonna want to bet on the Google when the counterparty is Google? There's not like an endless supply of idiots who will be willing to give money to Google employees."
+
+He also predicts that Polymarket and Kalshi will get better at preventing insider trading as their user base grows. "I think there will be protections in place. I think prediction markets will get better at not running markets that are just baked for insider trading; like, for example, will X candidate drop out of the election race at Y date."
+
+Professor John Cheyne-Lippold, who researches digital futurity at the University of Michigan, does not agree. The idea that prediction markets can be effectively controlled and regulated violates the expansionary nature of these markets.
+
+"The fact of capitalism is that capitalism needs to commodify and financialize and make everything a place where value can be created because of the historic law of depreciating returns"
+
+"If you financialize everything, then you have to regulate everything, and it's really hard to regulate everything," he argues. 
+
+He is also skeptical of the idea that a equilibrium could be reached as users leave markets which are unfair. In his ethnographic research on sports betting, conducted in sports bars, Professor Lippold notes that many bettors believe in their own individual exceptionalism.
+
+"A lot of people think they're smarter than Vegas. There's this weird conceit where you think everyone's a sucker but me," he said. This self-delusion plays out on Polymarket as well, with users continuing to place bets on markets where they're clearly, evidently at a disadvantage
+
+"People are betting on how Love Island is going to end. How can you? That's insane. It already is finished, you know. For certain, that some people know that information.”
+
+At the Federal level, many critics are doubtful if the USA government has the will to oversee Polymarket. For starters, Polymarket enjoys strong ties to the Trump administration. Donald Trump Junior is a an advisor and investor to Polymarket thanks to his venture capital firm 1789 Capital. President Trump has also praised Polymarket on Truth Social, promising that they will 'thrive' under his rule.
+
+The CFTC itself is also mired in a tangle of lawuits thanks to its Chairman's pro-Prediction market cheerleading. The agency has sued Arizona, New Mexico, Connecticut and Illionis for attempting to ban the use of prediction markets---arguing that regulatoryjurisdiction belongs to the agency alone.
+
+It is being sued by the Chicago Mercantile Exchange for allowing Polymarket to sell 'perpetual futures' in violation of existing regulation. THe CFTC dismissed the lawsuit and mocked the CME for being afraid of competition. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<>
+
+
+
+
+
+
