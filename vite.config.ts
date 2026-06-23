@@ -8,6 +8,9 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  preview: {
+    allowedHosts: ['chronicle-of-a-death-foretold-production.up.railway.app'],
+  },
   build: {
     rollupOptions: {
       input: {
