@@ -2,7 +2,7 @@
 import * as d3 from 'd3';
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoicGppZTE5OTIiLCJhIjoiY21qNXZxc29hMTJxNDNnczhzZmE3cXJrNSJ9.LJ97byi_nyoS-LMS1L4dtw';
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
         const map = new mapboxgl.Map({
             style: 'mapbox://styles/pjie1992/cmqe4wrx3002101sc1rrz1gye?fresh=true',
