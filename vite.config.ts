@@ -11,10 +11,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
-        story: 'build_1/story.html',
+        // main: 'index.html',
+        // story: 'build_1/story.html',
         story2: 'build_2/html/story.html',
-        wallet: 'build_1/wallet.html',
+        // wallet: 'build_1/wallet.html',
       },
     },
   },
