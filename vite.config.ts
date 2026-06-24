@@ -16,7 +16,7 @@ export default defineConfig({
       input: {
         // main: 'index.html',
         // story: 'build_1/story.html',
-        story2: 'build_2/html/story.html',
+        index: 'build_2/html/index.html',
         // wallet: 'build_1/wallet.html',
       },
     },
