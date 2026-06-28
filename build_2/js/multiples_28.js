@@ -140,4 +140,22 @@
             .attr('stroke-opacity', 0.15)
             .attr('stroke-dasharray', '3,3'));
 
+        svg.append('text')
+        .attr('x', totalWidth/2)
+        .attr('y', margin.top - 10)
+        .attr('fill', 'white')
+        .attr('font-size', '12px')
+        .attr('font-weight', 'bold')
+        .attr('text-anchor', 'middle')
+        .text('Will the US Strike Iran by 28th February?');
+
+        svg.append('text')
+        .attr('x', margin.left - 40)
+        .attr('y', margin.top - 10)
+        .attr('fill', 'white')
+        .attr('font-size', '12px')
+        .attr('font-weight', 'normal')
+        .attr('text-anchor', 'start')
+        .text('Volume of shares traded');
+
         console.log(keys);

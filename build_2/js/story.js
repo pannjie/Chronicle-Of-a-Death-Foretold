@@ -1,7 +1,6 @@
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
-import * as d3 from 'd3';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -15,7 +14,7 @@ gsap.utils.toArray('.step').forEach((el, i) => {
       trigger: el,
       start: 'top 80%',
       end: 'top 35%',
-      scrub: 1.5,
+      scrub: true,
       // toggleActions: 'play none none none',
 
     },

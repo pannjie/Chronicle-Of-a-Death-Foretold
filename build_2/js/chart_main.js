@@ -257,13 +257,34 @@ gsap.registerPlugin(ScrollTrigger);
         }
          
 
-         const gx =svg.append('g')
+        const gx =svg.append('g')
         .attr('transform', `translate(0,${height - marginBottom})`)
         .call(xAxis);
 
         svg.append('g')
         .attr('transform', `translate(${marginLeft},0)`)
         .call(yAxis);
+
+        // axis info
+        svg.append('text')
+        .attr('x', marginLeft - 40)
+        .attr('y', marginTop - 20)
+        .attr('fill', 'white')
+        .attr('font-size', '12px')
+        .attr('font-weight', 'normal')
+        .attr('text-anchor', 'start')
+        .text('$USD');
+
+        // sources info
+        // svg.append('text')
+        // .attr('x', width/2)
+        // .attr('y', height - marginBottom + 60)
+        // .attr('fill', 'lightgrey')
+        // .attr('font-size', '12px')
+        // .attr('font-weight', 'normal')
+        // .attr('text-anchor', 'middle')
+        // .text('Polymarket transactions for the market "US strikes Iran by February 28, 2026?" Sources: Dune Analytics, Polygonscan, Polymarket API');
+
 
 
         // Activates the ScrollTrigger plugin - required before any

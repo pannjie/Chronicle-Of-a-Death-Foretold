@@ -8,10 +8,11 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
         }))).filter(d => d.time <= new Date("2026-02-28T07:00:00Z"));
         // .filter(d => d.direction === "YES");
 
-        const margin = {top: 20, right: 30, bottom: 30, left: 80};
+        const margin = {top: 40, right: 30, bottom: 30, left: 80};
         const totalWidth = d3.select('.standard_2').node().getBoundingClientRect().width;
+        const totalHeight = d3.select('.standard_2').node().getBoundingClientRect().height;
         const width = totalWidth - margin.left - margin.right;
-        const height = 400 - margin.top - margin.bottom;
+        const height =  450 - margin.top - margin.bottom;
 
        const thresholds = d3.timeMinute.every(5)
        .range(d3.min(data, d => d.time), d3.max(data, d => d.time));
@@ -135,3 +136,23 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
             .attr('stroke', 'white')
             .attr('stroke-opacity', 0.15)
             .attr('stroke-dasharray', '3,3'));
+
+
+    svg.append('text')
+        .attr('x', totalWidth/2)
+        .attr('y', margin.top - 20)
+        .attr('fill', 'white')
+        .attr('font-size', '8px')
+        .attr('font-weight', 'bold')
+        .attr('text-anchor', 'middle')
+        .text('Will the US Strike Iran by 31st March?');
+
+        svg.append('text')
+        .attr('x', margin.left - 40)
+        .attr('y', margin.top - 20)
+        .attr('fill', 'white')
+        .attr('font-size', '8px')
+        .attr('font-weight', 'normal')
+        .attr('text-anchor', 'start')
+        .text('Volume of shares traded');
+        
