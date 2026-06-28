@@ -20,6 +20,8 @@ gsap.registerPlugin(ScrollTrigger);
         const marginBottom = 80;
         const marginLeft = 60;
 
+        
+
         const x = d3.scaleUtc()
             .domain([d3.min(data, d => d.time), d3.max(data, d => d.time)])
             .range([marginLeft, width - marginRight]);
@@ -41,7 +43,13 @@ gsap.registerPlugin(ScrollTrigger);
             .attr('viewBox', [0, 0, width, height])
             .attr('style', 'display: block; width: 100%; height: 100%;');
 
-
+        svg.append('defs').append('clipPath')
+        .attr('id', 'chart-area')
+        .append('rect')
+        .attr('x', marginLeft)
+        .attr('y', marginTop)
+        .attr('width', width)
+        .attr('height', height);
 
         const y0 = y(0);
         // const muted = data.filter(d =>!d.knowledge_window && !d.tracked_wallet);
@@ -144,7 +152,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
         function drawBars(values, fill) {
-        const layer = svg.append('g').attr('fill', fill);
+        const layer = svg.append('g').attr('fill', fill).attr('clip-path', 'url(#chart-area)');
           layer.selectAll('rect')
             .data(values)
             .join('rect')
@@ -156,7 +164,7 @@ gsap.registerPlugin(ScrollTrigger);
         }
 
         function growBars(values, fill) {
-        const layer = svg.append('g').attr('fill', fill);
+        const layer = svg.append('g').attr('fill', fill).attr('clip-path', 'url(#chart-area)');
           layer.selectAll('rect')
             .data(values)
             .join('rect')
@@ -168,7 +176,8 @@ gsap.registerPlugin(ScrollTrigger);
         }
 
         const baseLayer = svg.append('g')
-        .attr('fill','darkgrey');
+        .attr('fill','darkgrey')
+        .attr('clip-path', 'url(#chart-area)');
 
         baseLayer.selectAll('rect')
             .data(data)
@@ -180,12 +189,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 
         const trackedLayer = drawBars(tracked, '#39FF14');
+        // const grow_trackedLayer = growBars(tracked, '#39FF14');
         const dicedicediceLayer = drawBars(dicedicedice, '#2323FF');
         const grow_dicedicediceLayer = growBars(dicedicedice, '#2323FF');
         const anon_0x456Layer = drawBars(anon_0x456, '#FF00FF');
         const grow_anon_0x456Layer = growBars(anon_0x456, '#FF33FF');
         const aamsaasaLayer = drawBars(aaamsaasa, '#f0fb29');
-        const semiconductorITLayer = drawBars(semiconductorIT, '#f0fb29');
+        const semiconductorITLayer = drawBars(semiconductorIT, '#C8AB83');
+        const grow_aamsaasaLayer = growBars(aaamsaasa, '#f0fb29');
+        const grow_semiconductorITLayer = growBars(semiconductorIT, '#C8AB83');
          // these bars represent the trades which are ....
          // how many of them took place within the knowledge window?
 
@@ -223,6 +235,8 @@ gsap.registerPlugin(ScrollTrigger);
             grow_dicedicediceLayer.selectAll('rect').attr('x', d => x(d.time));
             aamsaasaLayer.selectAll('rect').attr('x', d => x(d.time));
             semiconductorITLayer.selectAll('rect').attr('x', d => x(d.time));
+            grow_aamsaasaLayer.selectAll('rect').attr('x', d => x(d.time));
+            grow_semiconductorITLayer.selectAll('rect').attr('x', d => x(d.time));
 
             gx.call(xAxis);
             // annotationLine_1.attr('x1', x(annotationTime_1)).attr('x2', x(annotationTime_1));
@@ -255,6 +269,8 @@ gsap.registerPlugin(ScrollTrigger);
               updatePosition();
             });
         }
+
+  
          
 
         const gx =svg.append('g')
@@ -265,15 +281,7 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('transform', `translate(${marginLeft},0)`)
         .call(yAxis);
 
-        // axis info
-        svg.append('text')
-        .attr('x', marginLeft - 40)
-        .attr('y', marginTop - 20)
-        .attr('fill', 'white')
-        .attr('font-size', '12px')
-        .attr('font-weight', 'normal')
-        .attr('text-anchor', 'start')
-        .text('$USD');
+       
 
         // sources info
         // svg.append('text')
@@ -340,7 +348,7 @@ gsap.registerPlugin(ScrollTrigger);
               trigger: '.draw',
               start: 'top center',
               endTrigger: '.withdraw',
-              end: 'top center',
+              end: '.withdraw',
               scrub: 0.5,
             }
         })
@@ -403,7 +411,10 @@ gsap.registerPlugin(ScrollTrigger);
           .to(grow_dicedicediceLayer.node(), {opacity: 0, duration: 1}, 7)
 
         master.from(aamsaasaLayer.node(), {opacity: 0, duration: 1}, 8)
-        .from(semiconductorITLayer.node(), {opacity: 0, duration: 1}, 8);
+        .from(semiconductorITLayer.node(), {opacity: 0, duration: 1}, 8)
+
+        master.from(grow_aamsaasaLayer.node(), {opacity: 0, duration: 1}, 9)
+        .from(grow_semiconductorITLayer.node(), {opacity: 0, duration: 1}, 9);
       
         document.querySelectorAll('.hover-animate').forEach(el => {
           gsap.set(el, { backgroundColor: 'rgba(10, 228, 72, 0)', padding: '0 3px' });
