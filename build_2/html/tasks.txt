@@ -1,0 +1,7 @@
+// create explainer app
+// add the titles, axis, sources and captions for the charts
+// add in the maps
+// add a stagger effect for the videos animation
+// add a auto-scroll effect for the wallets.
+// add in the social media listening charts
+// scrape discord once more
