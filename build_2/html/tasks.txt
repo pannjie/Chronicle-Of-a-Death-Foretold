@@ -5,3 +5,4 @@
 // add a auto-scroll effect for the wallets.
 // add in the social media listening charts
 // scrape discord once more
+// make wallet cards pointer-events-none by default, enable pointer-events-auto in showWallets when i >= 4

@@ -89,6 +89,27 @@ function showVideo(i, direction) {
   }
 }
 
+ScrollTrigger.create({
+  trigger: document.querySelectorAll('.step')[2],
+  start: 'center center',
+  end: 'bottom center',
+  onEnter: () => {
+    gsap.fromTo('.highlight',
+      { scaleX: 0, transformOrigin: 'left center' },
+      { scaleX: 1, duration: 0.5, ease: 'power2.out', stagger: 0.15, delay: 0.5 }
+    );
+  },
+  onLeave:     () => gsap.to('.highlight', { scaleX: 0, transformOrigin: 'left center', duration: 0.3 }),
+  onEnterBack: () => {
+    gsap.fromTo('.highlight',
+      { scaleX: 0, transformOrigin: 'left center' },
+      { scaleX: 1, duration: 0.5, ease: 'power2.out', stagger: 0.15, delay: 0.5 }
+    );
+  },
+  onLeaveBack: () => gsap.to('.highlight', { scaleX: 0, transformOrigin: 'left center', duration: 0.3 }),
+});
+
+
 function showWallets(i) {
   if (i >= 4 && i <= 8) {
     gsap.to('[data-visual="5"]', { opacity: 1, duration: 0.8, ease: 'power2.inOut' });
