@@ -66,7 +66,9 @@ gsap.registerPlugin(ScrollTrigger);
 
       const annotationTime_2 = parseTime("2026-02-28 06:15:00.000 UTC");
       const annotationTime_1 = parseTime("2026-02-27 20:38:00.000 UTC");
-       const annotationTime_dicedicedice = parseTime("2026-02-28 00:02:28.000 UTC");
+      const annotationTime_dicedicedice = parseTime("2026-02-28 00:02:28.000 UTC");
+      const annotationTime_aaamsaasa = parseTime("2026-02-28 05:20:00.000 UTC");
+      const annotationTime_semiconductorIT = parseTime("2026-02-28 05:30:00.000 UTC");
 
       const annotationLine_dicedicedice = svg.append('line')
         .attr('x1', x(annotationTime_dicedicedice))
@@ -77,7 +79,6 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '4,4');
       
-
       const annotationText_dicedicedice = svg.append('text')
         .attr('x', x(annotationTime_dicedicedice) + 5)
         .attr('y', marginTop + 15)
@@ -100,6 +101,11 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('fill', 'green')
         .attr('font-size', '12px');
 
+    
+
+
+        // const grow_aamsaasaLayer = growBars(aaamsaasa, '#f0fb29');
+        // const grow_semiconductorITLayer = growBars(semiconductorIT, '#C8AB83');
 
        annotationText_2.append('tspan')
         .attr('x', x(annotationTime_2) + 5)
@@ -120,33 +126,6 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('x', x(annotationTime_dicedicedice) + 5)
         .attr('dy', '1.5em')
         .text('(28 Feb, 00:02 UTC)');  
-
-
-      //   const annotationLine_1 = svg.append('line')
-      //   .attr('x1', x(annotationTime_1))
-      //   .attr('x2', x(annotationTime_1))
-      //   .attr('y1', marginTop)
-      //   .attr('y2', height - marginBottom)
-      //   .attr('stroke', 'green')
-      //   .attr('stroke-width', 1)
-      //   .attr('stroke-dasharray', '4,4');
-
-      //  const annotationText_1 = svg.append('text')
-      //   .attr('x', x(annotationTime_1 ) + 5)
-      //   .attr('y', marginTop + 15)
-      //   .attr('fill', 'green')
-      //   .attr('font-size', '12px');
-
-
-      //  annotationText_1.append('tspan')
-      //   .attr('x', x(annotationTime_1) + 5)
-      //   .attr('dy', 0)
-      //   .text('Trump orders strike on Iran');
-
-      //  annotationText_1.append('tspan')
-      //   .attr('x', x(annotationTime_1) + 5)
-      //   .attr('dy', '1.5em')
-      //   .text('(27 Feb, 20:38 UTC)');
 
 
 
@@ -216,6 +195,38 @@ gsap.registerPlugin(ScrollTrigger);
         const pad = (finalExtent[1] - finalExtent[0]) * 0.15;
         const finalDomain = [new Date(+finalExtent[0] - pad), new Date(+finalExtent[1] + pad)];
 
+        // const annotationBox_aaamsaasa = svg.append('rect')
+        // .attr('x', x(annotationTime_aaamsaasa))
+        // .attr('y', marginTop + 365)
+        // .attr('width', 140)
+        // .attr('height', 18)
+        // .attr('fill', '#f0fb29');
+
+        // const annotationText_aaamsaasa = svg.append('text')
+        // .attr('x', x(annotationTime_aaamsaasa) + 4)
+        // .attr('y', marginTop + 380)
+        // .attr('fill', '#262a33')
+        // .attr('font-size', '12px')
+        // .attr('font-weight', 'normal')
+        // .text('$40,000 USDC withdrawn');
+
+        // const annotationBox_semiconductorIT = svg.append('rect')
+        // .attr('x', x(annotationTime_semiconductorIT))
+        // .attr('y', marginTop + 485)
+        // .attr('width', 140)
+        // .attr('height', 18)
+        // .attr('fill', '#C8AB83');
+
+        // const annotationText_semiconductorIT = svg.append('text')
+        // .attr('x', x(annotationTime_semiconductorIT) + 4)
+        // .attr('y', marginTop + 500)
+        // .attr('fill', '#262a33')
+        // .attr('font-size', '12px')
+        // .attr('font-weight', 'normal')
+        // .text('$40,000 USDC withdrawn');
+        
+
+
         function domainToView(domain){
           const a = +domain [0], b = +domain[1];
           return [(a + b)/2, 0, b - a];
@@ -245,6 +256,11 @@ gsap.registerPlugin(ScrollTrigger);
             annotationText_2.selectAll('tspan').attr('x', x(annotationTime_2) + 5);
             annotationLine_dicedicedice.attr('x1', x(annotationTime_dicedicedice)).attr('x2', x(annotationTime_dicedicedice));
             annotationText_dicedicedice.selectAll('tspan').attr('x', x(annotationTime_dicedicedice) + 5);
+            // annotationBox_aaamsaasa.attr('x', x(annotationTime_aaamsaasa));
+            // annotationBox_aaamsaasa.attr('x', x(annotationTime_aaamsaasa));
+            // annotationBox_semiconductorIT.attr('x', x(annotationTime_semiconductorIT));
+            // annotationText_aaamsaasa.attr('x', x(annotationTime_aaamsaasa) + 4);
+            // annotationText_semiconductorIT.attr('x', x(annotationTime_semiconductorIT) + 4);
         }
 
         function redraw(domain){
@@ -414,7 +430,13 @@ gsap.registerPlugin(ScrollTrigger);
         .from(semiconductorITLayer.node(), {opacity: 0, duration: 1}, 8)
 
         master.from(grow_aamsaasaLayer.node(), {opacity: 0, duration: 1}, 9)
-        .from(grow_semiconductorITLayer.node(), {opacity: 0, duration: 1}, 9);
+        .from(grow_semiconductorITLayer.node(), {opacity: 0, duration: 1}, 9)
+        .from('#label-aaamsaasa', {opacity: 0, duration: 1}, 9)
+        .from('#label-semiconductorIT', {opacity: 0, duration: 1}, 9)
+        // .from(annotationBox_aaamsaasa.node(), {opacity: 0, duration: 1}, 9)
+        // .from(annotationBox_semiconductorIT.node(), {opacity: 0, duration: 1}, 9)
+        // .from(annotationText_aaamsaasa.node(), {opacity: 0, duration: 1}, 9)
+        // .from(annotationText_semiconductorIT.node(), {opacity: 0, duration: 1}, 9);
       
         document.querySelectorAll('.hover-animate').forEach(el => {
           gsap.set(el, { backgroundColor: 'rgba(10, 228, 72, 0)', padding: '0 3px' });
