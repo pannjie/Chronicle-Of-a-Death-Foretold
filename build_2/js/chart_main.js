@@ -297,6 +297,15 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('transform', `translate(${marginLeft},0)`)
         .call(yAxis);
 
+         svg.append('text')
+        .attr('x', marginLeft - 40)
+        .attr('y', marginTop - 30)
+        .attr('fill', 'white')
+        .attr('font-size', '12px')
+        .attr('font-weight', 'normal')
+        .attr('text-anchor', 'start')
+        .text('USD Amount');
+
        
 
         // sources info

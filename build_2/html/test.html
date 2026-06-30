@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component test page</title>
+    <link rel="stylesheet" href="../css/story.css">
+</head>
+<body>
+    <script type="module" src="../js/wallet-list.js"></script>
+    <script type="module" src="../js/chart_main.js"></script>
+    <script type="module" src="../js/explainer_1.js"></script>
+    <script type="module" src="../js/explainer_2.js"></script>
+    <script type="module" src="../js/multiples_28.js"></script>
+    <script type="module" src="../js/multiples_31.js"></script>
+    <script type="module" src="../js/multiples_ET.js"></script>
+
+    <div class="p-8 flex flex-col gap-12">
+
+        <section>
+            <h2 class="text-white text-lg mb-2">explainer.js → #explainer</h2>
+            <div id="explainer_1" class="max-w-prose"></div>
+            <!-- <span>5000 shares at $0.2/each</span>
+            <span>Final take: $4000</span> -->
+        </section>
+
+
+        <section>
+            <h2 class="text-white text-lg mb-2">explainer.js → #explainer</h2>
+            <div id="explainer_2" class="max-w-prose"></div>
+        </section>
+
+
+        <section>
+            <h2 class="text-white text-lg mb-2">wallet-list.js → .wallet-list</h2>
+            <div class="wallet-list grid grid-cols-4 gap-5"></div>
+        </section>
+
+        <section>
+            <h2 class="text-white text-lg mb-2">multiples_28.js → .standard_1</h2>
+            <div class="standard_1 w-full h-100"></div>
+        </section>
+
+        <section>
+            <h2 class="text-white text-lg mb-2">multiples_31.js → .standard_2</h2>
+            <div class="standard_2 w-full h-100"></div>
+        </section>
+
+        <section>
+            <h2 class="text-white text-lg mb-2">multiples_ET.js → .standard_3</h2>
+            <div class="standard_3 w-full h-100"></div>
+        </section>
+
+        <section>
+            <h2 class="text-white text-lg mb-2">chart_main.js → #chart (static render only — scroll-driven reveals skipped on this page)</h2>
+            <div id="chart" class="w-full h-screen relative"></div>
+        </section>
+
+    </div>
+</body>
+</html>
