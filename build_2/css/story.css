@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
 body {
-    font-family: 'Arial', Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     background-color: #262a33;
     color: white;
+}
+
+.headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.main-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 500;
+  
+  font-size:7rem;
+  font-style: bold;
 }
 
 .hover-animate {

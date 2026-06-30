@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="../css/story.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.css" rel="stylesheet">
     <!-- Imports the Mapbox GL JS bundle -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.js"></script>        
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.24.0/mapbox-gl.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">       
 </head>
 <body>
     <script type='module' src="../js/story.js"></script>
@@ -20,7 +23,7 @@
     <script type="module" src="../js/map.js"></script>
 
     <section class="relative pointer-events-none">
-        <header class="absolute top-0 w-full z-50 text-center py-4 tracking-widest text-sm font-bold uppercase border-b border-white/20 text-white">
+        <header class="headline absolute top-0 w-full z-50 text-center py-4 tracking-widest text-sm font-bold uppercase border-b border-white/20 text-white">
             BLOCKHEAD
         </header>
 
@@ -154,7 +157,7 @@
             Investigations
         </div>
             
-        <div class="mx-auto max-w-md text-7xl font-bold text-center mt-2">
+        <div class=" main-headline mx-auto max-w-md text-7xl font-bold text-center mt-6">
             CHRONICLE OF A <span class="">WAR</span> FORETOLD
         </div>
         <div class="mx-auto w-120 flex items-center leading-tight italic justify-center text-[25px] text-shadow-white font-normal p-8 text-center">
@@ -223,11 +226,13 @@
         </div>
 
         <div id="chart" class="sticky top-0 h-screen z-0 w-full mx-auto">
-            <span id="label-aaamsaasa" class="bg-[#f0fb29] text-[#262a33] px-1.5 py-0.5 text-xs absolute top-[70%] left-[20%]">
-                $700,000 USDC won
+            <span id="label-aaamsaasa" class="text-white text-xs absolute top-[70%] left-[20%]">
+                <span class="bg-[#f0fb29] text-[#262a33] px-1 py-0.5">$30,157.58 Profit</span><br>
+                <span class="bg-[#f0fb29] text-[#262a33] px-1 py-0.5">Withdrawn: 02/28/2026 4:16:07 PM GMT</span>
             </span>
-            <span id="label-semiconductorIT" class="bg-[#C8AB83] text-white px-1.5 py-0.5 text-xs absolute top-[65%] left-[70%]">
-                $40,000 USDC withdrawn
+            <span id="label-semiconductorIT" class="text-white text-xs absolute top-[65%] left-[70%]">
+                <span class="bg-[#C8AB83] px-1 py-0.5">$29,410.12 Profit</span><br>
+                <span class="bg-[#C8AB83] px-1 py-0.5">Withdrawn: 02/28/2026 4:20:41 PM GMT</span>
             </span>
         </div>
 
@@ -289,7 +294,7 @@
             The spike was highly directional. Most of the traffic came from transactions buying YES shares for 'Will the US Strike Iran by 28th February?" "Will the US Strike Iran by 31 March?" and "Will the US next strike Iran on February 28, 2026 (ET)?". 
         </div>
 
-        <div class="mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
+        <div class="headline mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
            Trading volumes on Polymarket spiked between 5-6AM. <br> Roughly one hour before the first strikes began
         </div>
         
@@ -319,7 +324,7 @@
              Hannah Su, a freelance shipping analyst, has examined the AIS transponder data from the three US Aircraft Carriers involved in the war. She says there is little open source information to directly indicate that a strike would be imminent. Neither the USS Abraham Lincoln nor the USS Gerald Ford had turned on its AIS transponder on the 28th—their last known locations were in the Straits of Malacca and off the coast of Morocco.
         </div>
 
-        <div class="mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
+        <div class="headline mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
             Last known positions of US Aircraft Carriers involved in the war.
         </div>
 
@@ -347,8 +352,8 @@
         <div class="mx-auto max-w-prose pt-4 pb-4">
              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
-        <div class="mx-auto max-w-prose pt-4 pb-4">
-             <span class="chapter-head text-2xl flex items-center gap-3"><span class="w-4 h-4 bg-green-500 inline-block"></span>The Regulatory Pretzel</span>
+        <div class="mx-auto max-w-prose pt-8 pb-8">
+             <span class="chapter-head headline text-2xl inline-flex items-center gap-3"><span class="w-4 h-4 bg-green-500 shrink-0"></span>The Regulatory Pretzel</span>
         </div>
         <div class="mx-auto max-w-prose pt-4 pb-4">
             During the company's infancy, Polymarket CEO Shayne Coplan had celebrated the presence of insiders. In a CBS interview from 2024, Coplan claimed that insiders would 'bring a lot of benefits to the market.'
@@ -431,8 +436,8 @@
             "It's either very simple or very professional, like a mule. Given the amounts, it is likely to be an amateur. This is something that law enforcement could unravel if it cared," he said.
         </div>
 
-        <div class="mx-auto max-w-prose pt-4 pb-4">
-             <span class="chapter-head text-2xl flex items-center gap-3"><span class="w-4 h-4 bg-green-500 inline-block"></span>The Future of Prediction</span>
+        <div class="mx-auto max-w-prose pt-8 pb-8">
+             <span class="chapter-head headline text-2xl inline-flex items-center gap-3"><span class="w-4 h-4 bg-green-500 shrink-0"></span>The Future of Prediction</span>
         </div>
         <div class="mx-auto max-w-prose pt-4 pb-4">
             The future has become a gold rush. On 24 June, Mark Zuckerberg announced that Meta would develop its own prediction market called 'Arena'. He will join Coinbase, Smarkets, PredictIt, Crypto.com, Versus in an increasingly crowded landscape that offers odds on the world of tomorrow.
@@ -441,7 +446,7 @@
             Alongside them, there's a thriving secondary market dedicated to insights, tools, bots and data that promises riches untold. Websites like Unusual Whales, Polygun, [], [] advertise their services by publishing a neverending stream of FOMO. They spotlight wallets of probable insiders. Wallets that struck big on Superbowl ads. Wallets with an uncanny record on what Trump would say next. Wallets dedicated to the weather in Seoul, London or Chicago.
         </div>
 
-        <div class="mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
+        <div class="headline mx-auto max-w-prose text-center font-bold text-2xl mt-10 pt-8 pb-4">
             Markets have grown rapidly in the past year. Especially in the Middle East.
         </div>
 
