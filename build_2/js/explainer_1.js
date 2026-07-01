@@ -53,9 +53,9 @@ series.append('rect')
 
 series.append('rect')
     .attr('class', 'label-bg')
-    .attr('x', x(0) - 45)
+    .attr('x', x(0) - 60)
     .attr('y', barCenterY - 16)
-    .attr('width', 90)
+    .attr('width', 120)
     .attr('height', 32)
     .attr('rx', 4)
     .attr('fill', '#262a33')
@@ -105,7 +105,7 @@ function render(d) {
         });
 
         gsap.to(g.select('rect.label-bg').node(), {
-            attr: { x: midX - 45 },
+            attr: { x: midX - 60 },
             opacity: percent === 0 ? 0 : 1,
             duration: 1,
             ease: 'power2.inOut'
