@@ -74,6 +74,16 @@ function showVideo(i, direction) {
     }
   }
 
+  if (i === 3 && direction === 'down') {
+    gsap.to('[data-visual="3"]', {
+      opacity: 1,
+      duration: 0.5,
+      delay: 1.5,
+      ease: 'power2.inOut',
+      overwrite: true,
+    });
+  }
+
   if (i === 4 && direction === 'down') {
     // const cols = 4;
     // const rows = Math.ceil(document.querySelectorAll('.wallet-card').length / cols);

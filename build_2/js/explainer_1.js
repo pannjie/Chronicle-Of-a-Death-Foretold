@@ -5,7 +5,8 @@ import { gsap } from 'gsap';
 
 const width = 1500;
 const height = 500; // sized to fit the bar + position text below it, not the full screen
-const marginTop = 80;
+// const marginTop = 80;
+const marginTop = 180;
 const marginRight = 20;
 const marginBottom = 40;
 const marginLeft = 60;
@@ -80,7 +81,7 @@ svg.append('text')
     .attr('text-anchor', 'middle')
     .attr('fill', 'white')
     .attr('font-size', '24px')
-    .attr('font-weight', 'normal')
+    .attr('font-weight', 'bold')
     .text(data[0].label);
 
 document.getElementById('explainer_1').appendChild(svg.node());
@@ -135,11 +136,16 @@ render(data[0]); // initial reveal, animating in from 0%/0%
 
 // buttons live inside the SVG (via foreignObject) so they sit in the same
 // row as the title, right-aligned at the row's end, sized to match it.
+// const controlsFO = svg.append('foreignObject')
+//     .attr('x', width - marginRight - 160)
+//     .attr('y', titleY - 20)
+//     .attr('width', 160)
+//     .attr('height', 28);
 const controlsFO = svg.append('foreignObject')
-    .attr('x', width - marginRight - 160)
-    .attr('y', titleY - 20)
-    .attr('width', 160)
-    .attr('height', 28);
+    .attr('x', width / 2 - 100)
+    .attr('y', barY + 220)
+    .attr('width', 200)
+    .attr('height', 42);
 
 const controls = controlsFO.append('xhtml:div')
     .attr('class', 'flex gap-2 justify-end items-center h-full');
@@ -148,7 +154,8 @@ const controls = controlsFO.append('xhtml:div')
 // each line is a group of tspans - highlighted ones get a neon-green
 // background rect measured with getBBox() (safe since svg is already in the DOM).
 const shares = 5000;
-const positionY = barY + 300 ;
+// const positionY = barY + 300;
+const positionY = barY + 230;
 
 const positionGroup1 = svg.append('g');
 const positionGroup2 = svg.append('g');
@@ -167,7 +174,7 @@ function renderHighlightedLine(group, yPos, parts) {
     parts.forEach(part => {
         textEl.append('tspan')
             .attr('class', part.highlight ? 'hl' : null)
-            .attr('fill', part.highlight ? '#262a33' : null)
+            .attr('fill', part.highlight ? '#262a33' : (part.fill ?? null))
             .text(part.text);
     });
 
@@ -184,14 +191,29 @@ function renderHighlightedLine(group, yPos, parts) {
     textEl.raise(); // keep text on top of the backgrounds just inserted
 }
 
-function updatePosition() {
-    renderHighlightedLine(positionGroup1, positionY, [
-        { text: shares.toLocaleString(), highlight: true },
-        { text: ' shares at ' },
-        { text: `$${initial.yes.toFixed(2)}`, highlight: true },
-        { text: '/each' }
-    ]);
+// function updatePosition() {
+//     // renderHighlightedLine(positionGroup1, positionY, [  // was below the bar
+//     renderHighlightedLine(positionGroup1, titleY + 40 , [
+//         { text: shares.toLocaleString(), highlight: true },
+//         { text: ' shares at ' },
+//         { text: `$${initial.yes.toFixed(2)}`, highlight: true },
+//         { text: 'each' }
+//     ]);
 
+//     const cost = shares * initial.yes;
+//     const finalProfitText = data[0].yes === 1
+//         ? `+$${Math.round(shares - cost).toLocaleString()}`
+//         : data[0].yes === initial.yes
+//             ? 'pending'
+//             : `-$${Math.round(cost).toLocaleString()}`;
+
+//     renderHighlightedLine(positionGroup2, positionY + 40, [
+//         { text: 'Final profit: ' },
+//         { text: finalProfitText, highlight: true }
+//     ]);
+// }
+
+function updatePosition() {
     const cost = shares * initial.yes;
     const finalProfitText = data[0].yes === 1
         ? `+$${Math.round(shares - cost).toLocaleString()}`
@@ -199,27 +221,49 @@ function updatePosition() {
             ? 'pending'
             : `-$${Math.round(cost).toLocaleString()}`;
 
-    renderHighlightedLine(positionGroup2, positionY + 30, [
-        { text: 'Final profit: ' },
+    renderHighlightedLine(positionGroup1, titleY + 50, [
+        { text: shares.toLocaleString(), fill: '#39FF14' },
+        { text: ' shares at ' },
+        { text: `$${initial.yes.toFixed(2)}`, fill: '#39FF14' },
+        { text: '/each  —  Final profit: ' },
         { text: finalProfitText, highlight: true }
     ]);
 }
 
 const resolveBtn = document.createElement('button');
 resolveBtn.textContent = 'Resolve';
-resolveBtn.className = 'px-2 py-0.5 bg-white text-[#262a33] text-[11px] font-bold cursor-pointer';
+resolveBtn.className = 'px-3 py-1 bg-white text-[#262a33] text-[16px] font-bold cursor-pointer';
 resolveBtn.addEventListener('click', () => {
     data[0].yes = 1;
     data[0].no = 0;
     render(data[0]);
-    updatePosition();
+
+    const cost = shares * initial.yes;
+    const targetProfit = Math.round(shares - cost);
+    const counter = { val: 0 };
+    gsap.to(counter, {
+        val: targetProfit,
+        duration: 1,
+        ease: 'power2.inOut',
+        onUpdate: () => {
+            renderHighlightedLine(positionGroup1, titleY + 50, [
+                { text: shares.toLocaleString(), fill: '#39FF14' },
+                { text: ' shares at ' },
+                { text: `$${initial.yes.toFixed(2)}`, fill: '#39FF14' },
+                { text: '/each  —  Final profit: ' },
+                { text: `+$${Math.round(counter.val).toLocaleString()}`, highlight: true }
+            ]);
+        },
+        onComplete: () => updatePosition()
+    });
+
     resolveBtn.disabled = true;
     resolveBtn.classList.add('opacity-50');
 });
 
 const resetBtn = document.createElement('button');
 resetBtn.textContent = 'Reset';
-resetBtn.className = 'px-2 py-0.5 bg-white text-[#262a33] text-[11px] font-bold cursor-pointer';
+resetBtn.className = 'px-3 py-1 bg-white text-[#262a33] text-[16px] font-bold cursor-pointer';
 resetBtn.addEventListener('click', () => {
     data[0].yes = initial.yes;
     data[0].no = initial.no;

@@ -167,7 +167,7 @@ gsap.registerPlugin(ScrollTrigger);
               .attr('width', 2);
 
 
-        const trackedLayer = drawBars(tracked, '#39FF14');
+        const trackedLayer = drawBars(tracked, '#BFFF00');
         // const grow_trackedLayer = growBars(tracked, '#39FF14');
         const dicedicediceLayer = drawBars(dicedicedice, '#2323FF');
         const grow_dicedicediceLayer = growBars(dicedicedice, '#2323FF');

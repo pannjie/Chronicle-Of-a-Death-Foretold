@@ -210,7 +210,23 @@ resolveBtn.addEventListener('click', () => {
     data[0].yes = 1;
     data[0].no = 0;
     render(data[0]);
-    updatePosition();
+
+    const cost = shares * initial.yes;
+    const targetProfit = Math.round(shares - cost);
+    const counter = { val: 0 };
+    gsap.to(counter, {
+        val: targetProfit,
+        duration: 1,
+        ease: 'power2.inOut',
+        onUpdate: () => {
+            renderHighlightedLine(positionGroup2, positionY + 30, [
+                { text: 'Final profit: ' },
+                { text: `+$${Math.round(counter.val).toLocaleString()}`, highlight: true }
+            ]);
+        },
+        onComplete: () => updatePosition()
+    });
+
     resolveBtn.disabled = true;
     resolveBtn.classList.add('opacity-50');
 });
