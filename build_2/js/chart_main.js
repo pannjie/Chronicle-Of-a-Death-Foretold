@@ -20,6 +20,9 @@ gsap.registerPlugin(ScrollTrigger);
         const marginBottom = 80;
         const marginLeft = 60;
 
+       // your chosen colour
+
+
         
 
         const x = d3.scaleUtc()
@@ -42,6 +45,11 @@ gsap.registerPlugin(ScrollTrigger);
         const svg = d3.create('svg')
             .attr('viewBox', [0, 0, width, height])
             .attr('style', 'display: block; width: 100%; height: 100%;');
+
+          svg.append('rect')
+        .attr('width', width)
+        .attr('height', height )
+        .attr('fill', '#262f40');
 
         svg.append('defs').append('clipPath')
         .attr('id', 'chart-area')
@@ -91,14 +99,14 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('x2', x(annotationTime_2))
         .attr('y1', marginTop)
         .attr('y2', height - marginBottom)
-        .attr('stroke', 'green')
-        .attr('stroke-width', 3)
+        .attr('stroke', 'white')
+        .attr('stroke-width', 1)
         .attr('stroke-dasharray', '4,4');
 
        const annotationText_2 = svg.append('text')
         .attr('x', x(annotationTime_2) + 5)
         .attr('y', marginTop + 15)
-        .attr('fill', 'green')
+        .attr('fill', 'white')
         .attr('font-size', '12px');
 
     
@@ -126,6 +134,8 @@ gsap.registerPlugin(ScrollTrigger);
         .attr('x', x(annotationTime_dicedicedice) + 5)
         .attr('dy', '1.5em')
         .text('(28 Feb, 00:02 UTC)');  
+
+
 
 
 
@@ -167,15 +177,15 @@ gsap.registerPlugin(ScrollTrigger);
               .attr('width', 2);
 
 
-        const trackedLayer = drawBars(tracked, '#BFFF00');
+        const trackedLayer = drawBars(tracked, '#39FF14');
         // const grow_trackedLayer = growBars(tracked, '#39FF14');
-        const dicedicediceLayer = drawBars(dicedicedice, '#2323FF');
-        const grow_dicedicediceLayer = growBars(dicedicedice, '#2323FF');
-        const anon_0x456Layer = drawBars(anon_0x456, '#FF00FF');
-        const grow_anon_0x456Layer = growBars(anon_0x456, '#FF33FF');
-        const aamsaasaLayer = drawBars(aaamsaasa, '#f0fb29');
+        const dicedicediceLayer = drawBars(dicedicedice, '#EA526F');
+        const grow_dicedicediceLayer = growBars(dicedicedice, '#EA526F');
+        const anon_0x456Layer = drawBars(anon_0x456, '#F5B841');
+        const grow_anon_0x456Layer = growBars(anon_0x456, '#F5B841');
+        const aamsaasaLayer = drawBars(aaamsaasa, '#636940');
         const semiconductorITLayer = drawBars(semiconductorIT, '#C8AB83');
-        const grow_aamsaasaLayer = growBars(aaamsaasa, '#f0fb29');
+        const grow_aamsaasaLayer = growBars(aaamsaasa, '#636940');
         const grow_semiconductorITLayer = growBars(semiconductorIT, '#C8AB83');
          // these bars represent the trades which are ....
          // how many of them took place within the knowledge window?

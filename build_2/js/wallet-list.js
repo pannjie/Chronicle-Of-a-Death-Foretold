@@ -20,7 +20,7 @@ const cards = d3.select('.wallet-list')
     .selectAll('.wallet-card')
     .data(wallets)
     .join('a')
-    .attr('class', 'wallet-card block relative bg-[#262a33] px-[3px] pt-[5px] pb-[5px] cursor-pointer pointer-events-auto')
+    .attr('class', 'wallet-card block relative bg-[#262f40] px-[3px] pt-[5px] pb-[5px] cursor-pointer pointer-events-auto')
     .attr('href', d => d.link)
     .attr('target', '_blank')
     

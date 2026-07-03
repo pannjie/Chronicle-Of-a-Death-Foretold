@@ -35,7 +35,7 @@ const svg = d3.create('svg')
 
 const seriesKeys = ['yes', 'no'];
 const barY = y(data[0].label);
-const barCenterY = barY + 150;
+const barCenterY = barY + 100;
 
 // one <g> per key (yes/no), each holding its bar rect, label background, and label text.
 // everything starts collapsed at x(0)/0% - render() below animates it to the real values.
@@ -52,23 +52,15 @@ series.append('rect')
     .attr('width', 0)
     .attr('height', 200);
 
-series.append('rect')
-    .attr('class', 'label-bg')
-    .attr('x', x(0) - 60)
-    .attr('y', barCenterY - 16)
-    .attr('width', 120)
-    .attr('height', 32)
-    .attr('rx', 4)
-    .attr('fill', '#262a33')
-    .attr('fill-opacity', 0.7);
+// label-bg removed
 
 series.append('text')
     .attr('class', 'label')
     .attr('x', x(0))
     .attr('y', barCenterY)
     .attr('text-anchor', 'middle')
-    .attr('dominant-baseline', 'middle')
-    .attr('fill', 'white')
+    .attr('dominant-baseline', 'central')
+    .attr('fill', d => d === 'yes' ? '#262a33' : 'white')
     .attr('font-size', '20px')
     .attr('font-weight', 'normal')
     .text(d => `${d.toUpperCase()} 0%`);
@@ -105,12 +97,7 @@ function render(d) {
             ease: 'power2.inOut'
         });
 
-        gsap.to(g.select('rect.label-bg').node(), {
-            attr: { x: midX - 60 },
-            opacity: percent === 0 ? 0 : 1,
-            duration: 1,
-            ease: 'power2.inOut'
-        });
+        // label-bg removed
 
         const textNode = g.select('text.label').node();
         gsap.to(textNode, {
