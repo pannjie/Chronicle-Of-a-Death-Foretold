@@ -383,7 +383,7 @@ gsap.registerPlugin(ScrollTrigger);
               trigger: '.draw',
               start: 'top center',
               endTrigger: '.withdraw',
-              end: '.withdraw',
+              end: 'bottom center',
               scrub: 0.5,
             }
         })

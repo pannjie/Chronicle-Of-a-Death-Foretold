@@ -22,6 +22,7 @@
     <script type="module" src="../js/multiples_31.js"></script>
     <script type="module" src="../js/multiples_ET.js"></script>
     <script type="module" src="../js/map.js"></script>
+    <script type="module" src="../js/lightgallery_init.js"></script>
 
     <section class="relative pointer-events-none">
         <header class="headline absolute top-0 w-full z-50 text-center py-4 tracking-widest text-sm font-bold uppercase border-b border-white text-white">
@@ -277,7 +278,7 @@
         <div class="step withdraw z-10 min-h-screen mx-auto max-w-prose p-8 m-7 flex items-center">
             <div class="bg-[#262f40] p-8 text-white opacity-81">At 16:15pm and 16:20pm, they cashed out all of their winnings to the same Solana wallet: 4dlzqynk9szjf6. Both have been inactive since March.</div>
         </div>
-        <p class="text-xs mx-auto max-w-prose text-gray-400 mb-4 text-center"> Polymarket transactions for the market "US strikes Iran by February 28, 2026?" Sources: Dune Analytics, Polygonscan, Polymarket API</p>
+        <p class="text-xs relative z-10 mx-auto max-w-prose text-gray-400 mb-4 text-center"> Polymarket transactions for the market "US strikes Iran by February 28, 2026?" Sources: Dune Analytics, Polygonscan, Polymarket API</p>
         </section>
      
        
@@ -424,14 +425,14 @@
         <div class="mx-auto max-w-prose pt-4 pb-4">
             Meanwhile, the CFTC is also being sued by the <a href="https://www.ft.com/content/b7a788de-0f31-4b31-992b-45ddf92ccdcb" class="underline hover-animate" target="_blank">Chicago Mercantile Exchange</a> for allowing Polymarket to sell 'perpetual futures' in violation of existing regulation. The CFTC dismissed CME's suit as 'lawfare' and mocked the exchange for being 'scared' of competition.
         </div>
-        <div class="mx-auto w-full max-w-5xl mt-10 pt-8 pb-8 grid grid-cols-4 gap-4">
-            <img src="/pics/pdf/thumbs/CMEvCFTC-01.png" alt="CME v CFTC complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/ENFNewYorkComplanit042426-01.png" alt="New York enforcement complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/ENFWisconsinComplaint042826-01.png" alt="Wisconsin enforcement complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/OGC_KentuckyComplaint062326-01.png" alt="Kentucky complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/OGC_MinnesotaComplaint051926-001.png" alt="Minnesota complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/OGC_NewMexicoComplaint061226-01.png" alt="New Mexico complaint" class="w-full object-cover border border-white/20">
-            <img src="/pics/pdf/thumbs/trio-01.png" alt="Trio document" class="w-full object-cover border border-white/20">
+        <div id="legal-docs-gallery" class="mx-auto w-full max-w-5xl mt-10 pt-8 pb-8 grid grid-cols-4 gap-4">
+            <a href="/pics/pdf/thumbs/CMEvCFTC-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/CMEvCFTC-01.png" alt="CME v CFTC complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/ENFNewYorkComplanit042426-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/ENFNewYorkComplanit042426-01.png" alt="New York enforcement complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/ENFWisconsinComplaint042826-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/ENFWisconsinComplaint042826-01.png" alt="Wisconsin enforcement complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/OGC_KentuckyComplaint062326-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/OGC_KentuckyComplaint062326-01.png" alt="Kentucky complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/OGC_MinnesotaComplaint051926-001.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/OGC_MinnesotaComplaint051926-001.png" alt="Minnesota complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/OGC_NewMexicoComplaint061226-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/OGC_NewMexicoComplaint061226-01.png" alt="New Mexico complaint" class="w-full object-cover border border-white/20"></a>
+            <a href="/pics/pdf/thumbs/trio-01.png" data-lg-size="1275-1650"><img src="/pics/pdf/thumbs/trio-01.png" alt="Trio document" class="w-full object-cover border border-white/20"></a>
         </div>
         <p class="text-xs text-gray-400 mb-10 pt-8 text-center">A litany of litigation since Chairman Michael Selig took office. Source: CFTC</p>
 
@@ -478,12 +479,19 @@
                 <option value="Iran">Iran</option>
                 <option value="Ukraine">Ukraine</option>
             </select>
+            
 
         </div>
 
         <!-- <div id="info-panel" class="absolute z-10 top-10 left-100 w-100 bg-black bg-opacity-75 text-white p-4 text-s">
             <p>The number of markets you can bet on has exploded</p>
         </div> -->
+
+        <div class="absolute z-10 top-10 right-10 flex gap-4 items-center text-sm text-white" style="background:rgba(0,0,0,0.75); padding: 4px 10px; border-radius: 3px;">
+            <span class="inline-flex items-center gap-2"><span class="w-4 h-4 shrink-0" style="background:#157f3b"></span>Geographically specific</span>
+            <span class="inline-flex items-center gap-2"><span class="w-4 h-4 shrink-0" style="background:#e8f6e3"></span>Non-specific</span>
+        </div>
+
         </div>
         <div class="mx-auto max-w-prose pt-4 pb-4">
             The backlash is equally fervent, with nearly every major media outlet publishing some sort of exposé on the prediction industry. Early accusations of 'immorality' have given way to more detailed investigations on <a href="https://www.wsj.com/business/media/polymarket-social-media-bets-prediction-market-441cdeb5?eafs_enabled=false" class="underline hover-animate">deceptive advertising</a> or the unusual win rate of politics markets.
@@ -500,14 +508,17 @@
         <div class="mx-auto max-w-prose pt-4 pb-4">
             "However, if instead it's just people just going and making degenerate bets on the outcome of some person says some word on some given day, and they're all losing money to the smarter traders... that's not ideal."
         </div>
-        <div class="mx-auto max-w-prose pt-4 pb-4">
-            For Professor Cheyne-Lippold, however, there is a more interesting question. What is it about this particular moment in history that have made prediction markets so irresistible to so many? In his view, it is not just the promise of riches, but the diminishing returns from a precarious present.
-        </div>
+
         <div>
             <img src="/pics/belfast-visual.jpg" alt="belfast" class="mx-auto w-[70%] h-auto object-cover mb-10 pt-8">
         </div>
-
         <p class="text-xs text-gray-400 mb-10 pt-2 text-center">A user on Polymarket's Discord server proposes a market for anti-migrant riots in Belfast. <br>The request was not approved. Source: Polymarket Discord</p>
+
+        <div class="mx-auto max-w-prose pt-4 pb-4">
+            For Professor Cheyne-Lippold, however, there is a more interesting question. What is it about this particular moment in history that have made prediction markets so irresistible to so many? In his view, it is not just the promise of riches, but the diminishing returns from a precarious present.
+        </div>
+      
+
 
 
         <div class="mx-auto max-w-prose pt-4 pb-4">
@@ -530,14 +541,11 @@
             Is <a href="https://polymarket.com/de/@djijaij83jdo4jdlwjflsg" class="underline hover-animate" target="_blank">djijaij83jdo4jdlwjflsg</a> a forecaster gifted with exceptional insight into politics, or someone who was deeply involved in the White House? Only the future knows. Right now, the best we have are odds. On Manifold, the odds of catching that next insider are 58% Israeli Defence Forces, 39% OpenAI, 39% SpaceX, 36% KPMG, 34% Mr Beast, and 33% Amazon.
         </div>
         <hr class="border-white/20 mx-auto max-w-prose my-8">
-        <p class="mx-auto max-w-prose text-s text-gray-400 pt-4 pb-4">
+        <p class="mx-auto max-w-prose text-s text-gray-400 pt-4 pb-8">
             Research for this article draws from a variety of onchain sources, including DUNE analytics, Polygonscan, Polywatcher, Polymarket API, and the Polymarket Discord server. 
             With thanks to Jon Reiter, 'Simon', Hannah Su, Professor John Cheyne-Lippold, Dr David Young, Andy Freeman, Josh Cheetham, Nathan Walker and everyone forced to listen to me ramble about CLOB servers. Contact me at pannjie@gmail.com.
         </p>
 
-
-        <div class="mx-auto max-w-prose h-100 pt-4 pb-4">
-        </div>
         
        
 

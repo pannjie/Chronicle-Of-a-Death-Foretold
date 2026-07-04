@@ -165,7 +165,7 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
                 if (e.features.length > 0) {
                     document.body.style.cursor = 'pointer';
                     const p = e.features[0].properties;
-                    tooltip.innerHTML = `${p.question}<br><span style="opacity:0.7">Volume: $${(p.volume/1e6).toFixed(1)}M</span>`;
+                    tooltip.innerHTML = `${p.question}<br><span style="opacity:0.7">Volume: $${Number(p.volume).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>`;
                     tooltip.style.display = 'block';
                     tooltip.style.left = (e.originalEvent.pageX + 10) + 'px';
                     tooltip.style.top  = (e.originalEvent.pageY + 10) + 'px';
