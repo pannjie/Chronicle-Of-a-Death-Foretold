@@ -1,13 +1,13 @@
 import * as d3 from 'd3';
 
 const wallets = await d3.csv('../data/d3_wallets.csv', d => {
-    const pnlMatch = d.pnl.match(/\$([\d,]+\.?\d*)\s*\(([-\d.]+)%\)/);
+    const pnlMatch = d.pnl.match(/\$([\d,]+\.?\d*)\s*\(([-\d,]+\.?\d*)%\)/);
     return {
         wallet: d.wallet,
         name: d.name,
         amount: +d.usdc_amount,
         pnl: pnlMatch ? parseFloat(pnlMatch[1].replace(/,/g, '')) : 0,
-        pnlPercent: pnlMatch ? parseFloat(pnlMatch[2]) : 0,
+        pnlPercent: pnlMatch ? parseFloat(pnlMatch[2].replace(/,/g, '')) : 0,
         link: d.link
     };
 });
