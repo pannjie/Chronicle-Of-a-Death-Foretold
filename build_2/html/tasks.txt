@@ -8,7 +8,7 @@
 // make wallet cards pointer-events-none by default, enable pointer-events-auto in showWallets when i >= 4
 
 
-// fix mapbox highlight colour to text-[#262a33]
+// fix mapbox highlight colour to text-[#262a33] --- not nice, revise
 // add a legend for mapbox
 // change position of picture > degenerate traders
 // cut off properly
