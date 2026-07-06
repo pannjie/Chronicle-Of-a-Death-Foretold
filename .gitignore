@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 build_1/
+build_3/
 
 .env
