@@ -50,6 +50,10 @@ function showVideo(i, direction) {
   gsap.to('[data-visual]', { opacity: 0, duration: 0.8, ease: 'power2.inOut', overwrite: 'auto' });
   gsap.to(`[data-visual="${i}"]`, { opacity: 1, duration: 0.8, ease: 'power2.inOut', overwrite: 'auto' });
 
+  document.querySelectorAll(`video[data-visual="${i}"]`).forEach(v => {
+    v.play().catch(() => {});
+  });
+
   if (i === 2) {
     gsap.fromTo('.highlight',
       { scaleX: 0, transformOrigin: 'left center' },
