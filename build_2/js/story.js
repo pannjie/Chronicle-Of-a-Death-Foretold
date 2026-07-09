@@ -4,6 +4,20 @@ import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+// Videos, charts, the wallet list, and web fonts all finish loading/rendering
+// after this script runs, changing the page's total height. ScrollTrigger's
+// start/end positions are pixel offsets measured at creation time, so without
+// a refresh they go stale on slower connections (e.g. Railway vs localhost).
+// A debounced ResizeObserver on <body> catches any of those height changes,
+// whatever their source, and re-measures the triggers.
+let scrollTriggerRefreshTimeout;
+new ResizeObserver(() => {
+  clearTimeout(scrollTriggerRefreshTimeout);
+  scrollTriggerRefreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 200);
+}).observe(document.body);
+
+document.fonts.ready.then(() => ScrollTrigger.refresh());
+
 gsap.utils.toArray('.step').forEach((el, i) => {
   gsap.from(el, {
     opacity: 0.8,
