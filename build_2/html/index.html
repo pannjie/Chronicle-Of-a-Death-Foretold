@@ -14,6 +14,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Enriqueta:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loader" class="fixed inset-0 z-100 flex flex-col items-center justify-center gap-4 bg-[#262f40] transition-opacity duration-700">
+    <div class="w-12 h-12 border-4 border-white/20 border-t-green-500 rounded-full animate-spin"></div>
+    <p class="text-white/60 text-sm tracking-widest uppercase">Loading</p>
+    </div>
+
+   <!-- AI-coded -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('loader');
+        const heroVideo = document.querySelector('[data-visual="0"]');
+
+        function hideLoader() {
+            loader.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => loader.remove(), 700);
+        }
+
+        if (!heroVideo || heroVideo.readyState >= 3) {
+            hideLoader();
+        } else {
+            heroVideo.addEventListener('canplaythrough', hideLoader, { once: true });
+            setTimeout(hideLoader, 8000);
+        }
+    });
+    </script>
+
+
+
     <script type='module' src="../js/story.js"></script>
     <script type="module" src="../js/wallet-list.js"></script>
     <script type="module" src="../js/chart_main.js"></script>
