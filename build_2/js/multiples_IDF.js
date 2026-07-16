@@ -60,7 +60,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
         // ["#f7fcf5","#e6f5e1","#cdebc7","#addea7","#88cd87","#5db96b","#38a055","#1b843f","#04672b","#00441b"]
 
-        const svg = d3.select('.standard_4').append('svg')
+        const svg = d3.select('.standard_3').append('svg')
         .attr('width', width).attr('height', height);
 
         svg.selectAll('path')
